@@ -18,7 +18,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://shopify-cms-frontend-9hrpj85v5-fathima-fidas-projects-69dd2a5b.vercel.app",
   credentials: true
 }));
 
