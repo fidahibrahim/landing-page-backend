@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const faqSchema = new mongoose.Schema({
   sectionTitle: String,
   sectionSubtitle: String,
+  isActive: {
+    type: Boolean,
+    default: true
+  },
   faqs: [{
     question: String,
     answer: String,

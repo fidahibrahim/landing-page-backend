@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const pricing = await Price.findOne().sort({ createdAt: -1 });
+    const pricing = await Price.findOne({
+      isActive: true
+    }).sort({ createdAt: -1 });
     res.json(pricing);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch pricing" });

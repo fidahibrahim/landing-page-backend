@@ -4,6 +4,10 @@ const solutionSchema = new mongoose.Schema(
     {
         sectionTitle: String,
         sectionSubtitle: String,
+        isActive: {
+            type: Boolean,
+            default: true
+        },
         benefits: [{
             icon: String,
             title: String,

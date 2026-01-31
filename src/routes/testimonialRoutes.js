@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const testimonial = await Testimonial.findOne().sort({ createdAt: -1 });
+    const testimonial = await Testimonial.findOne({
+      isActive: true
+    }).sort({ createdAt: -1 });
     res.json(testimonial);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch testimonials" });

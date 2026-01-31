@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const howItWorksSchema = new mongoose.Schema({
   sectionTitle: String,
   sectionSubtitle: String,
+  isActive: {
+    type: Boolean,
+    default: true
+  },
   steps: [{
     number: String,
     title: String,

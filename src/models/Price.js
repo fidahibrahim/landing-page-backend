@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const pricingSchema = new mongoose.Schema({
   sectionTitle: String,
   sectionSubtitle: String,
+  isActive: {
+    type: Boolean,
+    default: true
+  },
   plans: [{
     name: String,
     price: String,

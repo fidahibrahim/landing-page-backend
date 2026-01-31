@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const testimonialsSchema = new mongoose.Schema({
   sectionTitle: String,
   sectionSubtitle: String,
+  isActive: {
+    type: Boolean,
+    default: true
+  },
   testimonials: [{
     quote: String,
     rating: { type: Number, min: 1, max: 5, default: 5 },
@@ -10,7 +14,7 @@ const testimonialsSchema = new mongoose.Schema({
       name: String,
       role: String,
       company: String,
-      avatar: String 
+      avatar: String
     },
     order: Number
   }]

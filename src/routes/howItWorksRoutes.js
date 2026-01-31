@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const data = await HowItWork.findOne().sort({ createdAt: -1 });
+    const data = await HowItWork.findOne({
+      isActive: true
+    }).sort({ createdAt: -1 });
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch how it works section" });

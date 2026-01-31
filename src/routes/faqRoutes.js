@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const faq = await Faq.findOne().sort({ createdAt: -1 });
+    const faq = await Faq.findOne({
+      isActive: true
+    }).sort({ createdAt: -1 });
     res.json(faq);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch FAQs" });

@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        const cta = await FinalCTA.findOne().sort({ createdAt: -1 });
+        const cta = await FinalCTA.findOne({
+            isActive: true
+        }).sort({ createdAt: -1 });
         res.json(cta);
     } catch (error) {
         res.status(500).json({ message: "Failed to fetch final CTA" });

@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const featuresSchema = new mongoose.Schema({
     sectionTitle: String,
     sectionSubtitle: String,
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     features: [{
         icon: String,
         title: String,

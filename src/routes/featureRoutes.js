@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const feature = await Feature.findOne().sort({ createdAt: -1 });
+    const feature = await Feature.findOne({
+      isActive: true
+    }).sort({ createdAt: -1 });
     res.json(feature);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch features" });
