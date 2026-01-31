@@ -15,5 +15,6 @@ const finalCTASchema = new mongoose.Schema({
   backgroundColor: String 
 }, { timestamps: true });
 
+
 export default mongoose.model("FinalCTA", finalCTASchema);
 
